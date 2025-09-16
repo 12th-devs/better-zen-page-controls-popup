@@ -1,0 +1,172 @@
+/*--------------*/
+/*Arc Style Multi-Toolbar URLbar*/
+@media not (-moz-bool-pref: "zen.view.use-single-toolbar") {
+  #urlbar-container {
+    justify-content: center !important;
+    #urlbar:not([breakout-extend]) {
+      --urlbar-width: 12vw !important;
+      .urlbar-background {
+        background-color: transparent !important;
+      }
+      .urlbar-input-container {
+        /* Page Type Icon, will be reworked into copy URL button */
+        #identity-box {
+          
+        }
+        /* URLbar Text input */
+        .urlbar-input-box {
+          #urlbar-input {
+            text-align: center !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+        /* Bookmark Button, to be reworked into page management etc */
+        #page-action-buttons {
+          #taskbar-tabs-button, #pageActionButton, #star-button-box, #reader-mode-button {
+            display: none !important;
+          }
+          #page-controls-button {
+            display: flex !important;
+            #controls-button {
+              list-style-image: url(chrome://browser/skin/zen-icons/permissions.svg) !important;
+            }
+          }
+        }
+
+#page-controls-panel {
+  --panel-padding: 8px !important;
+  &::part(content) {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  #page-controls-panel-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .page-controls-panel-section {
+      .page-controls-panel-section-label {
+        font-size: 11px;
+        color: light-dark(black, white);
+        opacity: 70%;
+      }
+      display: flex;
+      flex-direction: column;
+      /* share URL section */
+      #share-url-button {
+        display: flex;
+        justify-content: center;
+        width: 200px;
+        background-color: var(--toolbarbutton-hover-background);
+        &:hover {
+          background-color: color-mix(in srgb, var(--toolbarbutton-hover-background) 95%, white);
+        }
+        padding: 5px;
+        border-radius: 4px;
+        #share-url-image {
+          list-style-image: url(chrome://browser/skin/zen-icons/share.svg) !important;
+        }
+      }
+      /* Page Controls Section */
+      #page-controls-container {
+        padding: 3px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .urlbar-icon {
+          width: 32px !important;
+          height: 28px !important;
+          background-color: var(--toolbarbutton-hover-background);
+          border-radius: 4px;
+          padding: 5px;
+          &:hover {
+            background-color: color-mix(in srgb, var(--toolbarbutton-hover-background) 95%, white);
+          }
+        }
+        #take-screenshot-button {
+          list-style-image: url(chrome://browser/skin/zen-icons/screenshot.svg) !important;
+        }
+        #devtools-button {
+          list-style-image: url(chrome://browser/skin/zen-icons/developer.svg) !important;
+        }
+        #copy-link-button {
+          list-style-image: url(chrome://browser/skin/zen-icons/link.svg) !important;
+        }
+        #reader-button {
+          list-style-image: url(chrome://browser/skin/zen-icons/reader-mode.svg) !important;
+        }
+      }
+      /* extension section */
+        #extension-container {
+          padding: 0px 4px;
+          display: flex;
+          flex-direction: row;
+          gap: 5px !important;
+          .urlbar-icon {
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+              border-radius: 3px !important;
+              width: 20px !important;
+              height: 20px !important;
+              &:hover {
+                background-color: var(--toolbarbutton-hover-background);
+              }
+            .extension-icon {
+              width: 14px !important;
+              height: 14px !important;
+              &[enabled="false"] {
+                filter: grayscale(1);
+                opacity: .50 ;
+              }
+            }
+          }
+          #add-extension-button {
+            border-radius: 3px;
+            padding: 3px !important;
+            width: 20px !important;
+            height: 20px !important;
+            list-style-image: url(chrome://browser/skin/zen-icons/plus.svg) !important;
+            &:hover {
+              background-color: var(--toolbarbutton-hover-background);
+            }
+          }
+        }
+      /* functions section */
+      #function-container {
+          padding: 0px 4px;
+          display: flex;
+          flex-direction: row;
+          gap: 5px !important;
+        #bookmark-function {
+            list-style-image: url(chrome://browser/skin/zen-icons/bookmark.svg) !important;
+        }
+      }
+      /* Extras Section */
+      #extras-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        #page-secutity-status {
+          
+        }
+        #extras-function {
+          list-style-image: url(chrome://browser/skin/zen-icons/menu.svg) !important;
+          display: flex !important;
+          justify-content: center;
+          align-items: center;
+          border-radius: 3px !important;
+          padding: 3px;
+          width: 20px !important;
+          height: 20px !important;
+          &:hover {
+            background-color: var(--toolbarbutton-hover-background);
+          }
+        }
+      }
+    }
+  }
+}
